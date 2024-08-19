@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="flex container h-screen mx-auto p-4">
+      <div class="w-screen self-center">
+        <h1 class="text-3xl font-bold text-center mb-1">U-Conversion</h1>
+        <h2 class="text-md text-center mb-8">
+          Free units converter (with freedom units).
+        </h2>
+
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <div class="mb-4">
+            <label
+              for="category"
+              class="block text-sm font-medium text-gray-700"
+              >Category</label
+            >
+            <select
+              id="category"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
+              <option value="length">Length</option>
+              <option value="mass">Mass</option>
+              <option value="temperature">Temperature</option>
+              <option value="time">Time</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="inputValueWithUnit"
+              class="block text-sm font-medium text-gray-700"
+              >Value (From)</label
+            >
+            <div class="relative mt-1">
+              <input
+                type="number"
+                required
+                id="inputValue"
+                class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              <select
+                id="inputUnit"
+                class="absolute right-0 top-0 h-full px-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white"
+              ></select>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="outputValueWithUnit"
+              class="block text-sm font-medium text-gray-700"
+              >Output (To)</label
+            >
+            <div class="relative mt-1">
+              <input
+                type="text"
+                id="outputValue"
+                class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                disabled
+              />
+              <select
+                id="outputUnit"
+                class="absolute right-0 top-0 h-full px-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white"
+              ></select>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <button
+              id="convertButton"
+              class="w-full px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none"
+            >
+              Convert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute right-5 bottom-5">
+      <a href="https://trakteer.id/hnifalii/tip" target="_blank"><button class="bg-blue-500 shadow-md py-2 px-4 rounded-md text-center text-sm font-medium text-white hover:bg-blue-600">Button of generosity</button></a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
