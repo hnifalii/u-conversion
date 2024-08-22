@@ -93,7 +93,7 @@ const unitOptions = {
 
     if (category === 'temperature' || category === 'time') {
       document.getElementById('outputValue').value = result;
-      document.getElementById('outputValueDetailed').textContent = "";
+      document.getElementById('outputValueDetailed').style.display = 'none';
     } else {
       document.getElementById('outputValue').value = result.toFixed(0);
       document.getElementById('outputValueDetailed').textContent = `Detailed: ${result.toFixed(5)}`;
