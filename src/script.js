@@ -63,6 +63,17 @@ const unitOptions = {
       outputUnit.appendChild(option2);
     });
   }
+
+  document.getElementById('inputValue').addEventListener('input', function(event) {
+    const invalidChars = ['e', 'E', '+', '-', '*', '/'];
+  
+    this.value = this.value.replace(/[eE+\-*/]/g, '');
+  
+    if (invalidChars.includes(event.data)) {
+      alert('Invalid character detected!');
+    }
+  });
+  
   
   document.getElementById('category').addEventListener('change', populateUnits);
   
@@ -83,7 +94,8 @@ const unitOptions = {
     if (category === 'temperature' || category === 'time') {
       document.getElementById('outputValue').value = result;
     } else {
-      document.getElementById('outputValue').value = result.toFixed(4);
+      document.getElementById('outputValue').value = result.toFixed(0);
+      document.getElementById('outputValueDetailed').textContent = `Detailed: ${result.toFixed(5)}`;
     }
   });
   
